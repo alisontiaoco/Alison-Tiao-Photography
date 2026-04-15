@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alison Tiao Photography | Fee Schedule</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface-alt: #f7f7f7;
+      --text: #000000;
+      --muted: #4a4a4a;
+      --line: #000000;
+      --soft-line: rgba(0, 0, 0, 0.12);
+      --accent: #0303ab;
+      --accent-soft: #f1f2ff;
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--text);
+      font-family: "Poppins", sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 400;
+    }
+
+    .brand {
+      margin: 20px 0 10px;
+      font-family: "Urbanist", sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Urbanist", sans-serif;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin: 0;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 34px 0 10px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 42px);
+      letter-spacing: -0.035em;
+    }
+
+    .section .kicker {
+      margin: 6px 0 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 100%;
+      position: relative;
+    }
+
+    .card.featured {
+      background: var(--accent-soft);
+    }
+
+    .card.featured::before {
+      content: "Recommended";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .card-inner {
+      padding: 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid currentColor;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      max-width: 320px;
+    }
+
+    .price {
+      white-space: nowrap;
+      font-family: "Urbanist", sans-serif;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
+
+    .subhead {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 48ch;
+    }
+
+    .bestfor {
+      margin: 0 0 20px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--soft-line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .bestfor strong,
+    li strong,
+    .notes li::marker {
+      color: var(--text);
+    }
+
+    .block {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--soft-line);
+    }
+
+    .block h4 {
+      margin: 0 0 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .summary,
+    .notes {
+      margin: 24px 0 0;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .summary h2,
+    .notes h2 {
+      margin: 0 0 10px;
+      font-size: 26px;
+      letter-spacing: -0.03em;
+    }
+
+    .summary p,
+    .notes p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .keypoints {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .point {
+      padding: 16px;
+      border-radius: 14px;
+      background: var(--surface-alt);
+      border: 1px solid var(--soft-line);
+      color: var(--muted);
+    }
+
+    .point strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .notes ul {
+      margin-top: 12px;
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--soft-line);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .grid,
+      .keypoints {
+        grid-template-columns: 1fr;
+      }
+
+      .title-row {
+        flex-direction: column;
+      }
+
+      .card.featured::before {
+        position: static;
+        display: inline-block;
+        margin: 0 0 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Creative Services Fee Schedule</span>
+      <div class="brand">Alison Tiao Photography</div>
+      <h1>Product Photography & Website Services</h1>
+      <p class="lead">
+        Simple, strategic packages built for results.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Product Photography</h2>
+          <p class="kicker">Two options: streamlined production or campaign-level content.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-inner">
+            <span class="tag">Buy Now Package</span>
+            <div class="title-row">
+              <div>
+                <h3>Essential Production</h3>
+              </div>
+              <div class="price">$3,000</div>
+            </div>
+            <p class="subhead">A focused production for clean, high-performing product imagery.</p>
+            <p class="bestfor"><strong>Best for:</strong> brands that need polished assets quickly for product pages, launch materials, social content, and general web use.</p>
+
+            <div class="block">
+              <h4>Includes</h4>
+              <ul>
+                <li><strong>Pre-production planning:</strong> shot list development, creative direction, and scheduling.</li>
+                <li><strong>Professional shoot setup:</strong> controlled lighting, clean compositions, and multiple angles per product.</li>
+                <li><strong>Up to 10 final retouched images:</strong> selected and polished for delivery.</li>
+                <li><strong>Color correction and standard retouching:</strong> cleanup, surface refinement, and online-ready polish.</li>
+                <li><strong>High-resolution and web-ready exports:</strong> organized for straightforward use by your team.</li>
+                <li><strong>1 round of revisions:</strong> for minor refinements to final selected images.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card featured">
+          <div class="card-inner">
+            <span class="tag">Preferred Package</span>
+            <div class="title-row">
+              <div>
+                <h3>Brand Campaign Production</h3>
+              </div>
+              <div class="price">$3,750</div>
+            </div>
+            <p class="subhead">A more developed production for cohesive, campaign-ready imagery.</p>
+            <p class="bestfor"><strong>Best for:</strong> brands investing in storytelling, ad creative, launch campaigns, and a more distinctive visual identity.</p>
+
+            <div class="block">
+              <h4>Includes</h4>
+              <ul>
+                <li><strong>Concept development:</strong> mood direction, visual references, and broader shot planning.</li>
+                <li><strong>Expanded production approach:</strong> multiple looks, background changes, and varied compositions.</li>
+                <li><strong>Prop styling direction:</strong> support for materials, textures, and visual elements that enhance the product story.</li>
+                <li><strong>Advanced lighting design:</strong> more dimensional, premium imagery with stronger campaign versatility.</li>
+                <li><strong>Up to 20 final retouched images:</strong> delivered as a more flexible asset library.</li>
+                <li><strong>Advanced retouching and color grading:</strong> cleaner finishing and cohesive visual consistency across the full set.</li>
+                <li><strong>Multi-format exports:</strong> prepared for ecommerce, web, paid media, and social placements.</li>
+                <li><strong>2 rounds of revisions:</strong> to support more nuanced creative feedback.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+          <div class="summary" style="margin-top:28px;">
+        <h2>Additional Photography Services</h2>
+        <ul>
+          <li><strong>Additional photos ($25 each):</strong> expanded image counts or extended shot lists.</li>
+          <li><strong>Heavy retouching ($25 per image):</strong> advanced edits such as complex compositing, extensive cleanup, or detailed product refinement.</li>
+          <li><strong>Studio rental:</strong> available upon request.</li>
+          <li><strong>Model:</strong> available upon request.</li>
+          <li><strong>Hair and makeup artist:</strong> available upon request.</li>
+          <li><strong>Stylist:</strong> available upon request.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Website Production</h2>
+          <p class="kicker">Two options: a practical build or a growth-focused system.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-inner">
+            <span class="tag">Buy Now Package</span>
+            <div class="title-row">
+              <div>
+                <h3>Core Website Build</h3>
+              </div>
+              <div class="price">$3,500</div>
+            </div>
+            <p class="subhead">A professional site built for clarity, usability, and a credible online presence.</p>
+            <p class="bestfor"><strong>Best for:</strong> small businesses that need a clean, reliable website that communicates clearly and supports basic conversion goals.</p>
+
+            <div class="block">
+              <h4>Includes</h4>
+              <ul>
+                <li><strong>Site planning:</strong> page structure, navigation flow, and content layout.</li>
+                <li><strong>Up to 5 pages:</strong> typically Home, About, Services or Products, Contact, and one supporting page.</li>
+                <li><strong>Template-based customization:</strong> adapted to align with your brand style, typography, and color palette.</li>
+                <li><strong>Responsive design setup:</strong> built to display cleanly across desktop, tablet, and mobile.</li>
+                <li><strong>Basic SEO setup:</strong> foundational metadata and search visibility preparation.</li>
+                <li><strong>Essential integrations:</strong> contact forms, email capture, and core business features.</li>
+                <li><strong>Launch and handoff:</strong> live publication, 1 round of revisions, and light post-launch guidance.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card featured">
+          <div class="card-inner">
+            <span class="tag">Preferred Package</span>
+            <div class="title-row">
+              <div>
+                <h3>Growth Website System</h3>
+              </div>
+              <div class="price">$4,400</div>
+            </div>
+            <p class="subhead">A more robust website built for performance, conversion, and growth.</p>
+            <p class="bestfor"><strong>Best for:</strong> businesses that want their site to function as a real marketing and sales tool rather than a simple online brochure.</p>
+
+            <div class="block">
+              <h4>Includes</h4>
+              <ul>
+                <li><strong>Conversion-focused site strategy:</strong> user flow, lead capture, trust building, and content hierarchy planning.</li>
+                <li><strong>Up to 8 pages:</strong> supporting deeper structure for services, landing pages, FAQs, case studies, or campaigns.</li>
+                <li><strong>Semi-custom layout development:</strong> more flexibility and a more intentional visual experience.</li>
+                <li><strong>Advanced UX refinement:</strong> improved section pacing, stronger calls to action, and better internal linking.</li>
+                <li><strong>Advanced integrations:</strong> CRM, analytics, scheduling, email platforms, and other business tools as needed.</li>
+                <li><strong>Performance optimization:</strong> cleaner asset handling, responsiveness improvements, and scalable backend organization.</li>
+                <li><strong>Guided handoff or training:</strong> includes 2 rounds of revisions and post-launch walkthrough support.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+          <div class="summary" style="margin-top:28px;">
+        <h2>Monthly Maintenance — $500/month</h2>
+        <p>Ongoing website maintenance ensures your site remains secure, up-to-date, and performing reliably. This includes routine platform, theme, and plugin updates; performance checks for speed and uptime; and minor content or technical updates such as text edits, image swaps, and small layout adjustments. Maintenance is designed to keep your site stable and functional while supporting day-to-day business needs without requiring a full project scope.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Add-Ons</h2>
+          <p class="kicker">Additional services available as needed.</p>
+        </div>
+      </div>
+      <div class="summary">
+        <ul>
+          <li><strong>Extra revisions ($50 per revision):</strong> additional rounds beyond those included in the selected package.</li>
+          <li><strong>Additional services:</strong> any standard production or technical needs not outlined in the base packages.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>Notes</h2>
+      <ul>
+        <li>Expanded scope, rush scheduling, or additional services may be quoted separately.</li>
+        <li>Final proposals can be adjusted based on project size, timeline, and technical requirements.</li>
+        <li>This schedule is intended for client presentation and can be adapted into a proposal or PDF.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    Alison Tiao Photography · Fee Schedule
+  </footer>
+</body>
+</html>
